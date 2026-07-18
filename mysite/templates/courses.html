@@ -1,0 +1,327 @@
+{% extends "layout.html" %}
+<!-- declaro de donde traigo la plantilla -->
+
+{% block content %}
+<head>
+  <style>
+    .properties__img {
+      max-width: 100%; /* Limitar el ancho máximo de la imagen al tamaño de su contenedor */
+      height: auto; /* Permitir que la altura se ajuste automáticamente para mantener la proporción */
+      object-fit: cover; /* Ajustar la imagen manteniendo la proporción y cubriendo el contenedor */
+    }
+  </style>
+</head>
+<main>
+  <!--? slider Area Start-->
+  <section class="slider-area slider-area2">
+    <div class="slider-active">
+      <!-- Single Slider -->
+      <div class="single-slider slider-height2">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-8 col-lg-11 col-md-12">
+              <div class="hero__caption hero__caption2">
+                <h1 data-animation="bounceIn" data-delay="0.2s">
+                  Nuestros cursos
+                </h1>
+                <!-- breadcrumb Start-->
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="index.html">Home</a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="#">Cursos</a></li>
+                  </ol>
+                </nav>
+                <!-- breadcrumb End -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Courses area start -->
+  <div class="courses-area section-padding40 fix">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-8">
+          <div class="section-tittle text-center mb-55">
+            <h2>Nuestros cursos destacados</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="card-deck"></div>
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-8">
+          <div class="section-tittle text-center mt-40">
+            <a href="#" class="border-btn">Descubre Más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Courses area End -->
+  <!--? top subjects Area Start -->
+  <div class="topic-area">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-8">
+          <div class="section-tittle text-center mb-55">
+            <h2>Explora los temas más importantes</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="single-topic text-center mb-30">
+            <div class="topic-img">
+              <img src="../static/img/gallery/topic1.png" alt="" />
+              <div class="topic-content-box">
+                <div class="topic-content">
+                  <h3><a href="#">Programación</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="single-topic text-center mb-30">
+            <div class="topic-img">
+              <img src="../static/img/gallery/topic2.png" alt="" />
+              <div class="topic-content-box">
+                <div class="topic-content">
+                  <h3><a href="#">UX & UI</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="single-topic text-center mb-30">
+            <div class="topic-img">
+              <img src="../static/img/gallery/topic3.png" alt="" />
+              <div class="topic-content-box">
+                <div class="topic-content">
+                  <h3><a href="#">Diseño Gráfico</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="single-topic text-center mb-30">
+            <div class="topic-img">
+              <img src="../static/img/gallery/topic4.png" alt="" />
+              <div class="topic-content-box">
+                <div class="topic-content">
+                  <h3><a href="#">Música</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="single-topic text-center mb-30">
+            <div class="topic-img">
+              <img src="../static/img/gallery/topic5.png" alt="" />
+              <div class="topic-content-box">
+                <div class="topic-content">
+                  <h3><a href="#">Arte</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="single-topic text-center mb-30">
+            <div class="topic-img">
+              <img src="../static/img/gallery/topic6.png" alt="" />
+              <div class="topic-content-box">
+                <div class="topic-content">
+                  <h3><a href="#">Naturales</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="single-topic text-center mb-30">
+            <div class="topic-img">
+              <img src="../static/img/gallery/topic7.png" alt="" />
+              <div class="topic-content-box">
+                <div class="topic-content">
+                  <h3><a href="#">Construcción</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="single-topic text-center mb-30">
+            <div class="topic-img">
+              <img src="../static/img/gallery/topic8.png" alt="" />
+              <div class="topic-content-box">
+                <div class="topic-content">
+                  <h3><a href="#">Salud</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-xl-12">
+          <div class="section-tittle text-center mt-20">
+            <a href="courses.html" class="border-btn">Más categorías</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- top subjects End -->
+  <!-- ? services-area -->
+  <div class="services-area services-area2 section-padding40">
+    <div class="container">
+      <div class="row justify-content-sm-center">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="single-services mb-30">
+            <div class="features-icon">
+              <img src="../static/img/icon/icon1.svg" alt="" />
+            </div>
+            <div class="features-caption">
+              <h3>60+ cursos IT</h3>
+              <p>Explorá áreas como programación, diseño y datos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="single-services mb-30">
+            <div class="features-icon">
+              <img src="../static/img/icon/icon2.svg" alt="" />
+            </div>
+            <div class="features-caption">
+              <h3>Profesores expertos</h3>
+              <p>Aprendé con profesionales con experiencia real.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="single-services mb-30">
+            <div class="features-icon">
+              <img src="../static/img/icon/icon3.svg" alt="" />
+            </div>
+            <div class="features-caption">
+              <h3>Acceso de por vida</h3>
+              <p>Volvé a repasar el contenido cuando quieras.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+  // Función que obtiene los datos de la API y crea las cards
+  function obtenerDatos() {
+    // Función fetch para obtener los datos de la API,
+    // es una API web que permite realizar solicitudes HTTP asincrónicas
+    // (puede solicitar datos de recursos en línea sin tener que recargar la página web completa)
+    fetch("https://cursos-1e632-default-rtdb.firebaseio.com/cursos.json")
+      // El navegador enviará una solicitud HTTP GET al servidor que aloja la API para obtener los datos.
+      // La respuesta a esa solicitud se pasa a la función .then(), se crea el objeto response, que guarda
+      // la PROMESA Y donde se llama a .json() para convertir los datos en formato JSON a un objeto JavaScript.
+      .then((response) => response.json())
+      .then((data) => {
+        // Recibe esos datos y crea la variable data que va a contener todos los datos en formato JSON que se obtienen utilizando la función fetch.
+        // Obtener el elemento contenedor para las cards
+        const cardDeck = document.getElementById("card-deck");
+        cardDeck.innerHTML = ""; //limpia todo lo que hay en la card anterior(esto hace que siempre que se ejecute la funcion la card
+        // cargue de nuevo y no muestre info que ya tenga cargado)
+        // Iterar sobre los datos y crear una card para cada objeto
+        for (let key in data) {
+          //La variable data contiene los datos en formato JSON que se obtienen utilizando la función fetch.
+          const objeto = data[key]; // recorrer los objetos dentro de data. En cada iteración, la variable key tomará el valor de una de las propiedades
+          // de data. La variable objeto se utiliza para almacenar el objeto que se encuentra en la posición key de data.
+
+          // Crear los elementos HTML para la card
+          const card = document.createElement("div"); //Crear nuevo elemento HTML div y asignarlo a la variable card. Agregar la clase "card" a ese elemento
+          // utilizando el método classList.add().
+          card.classList.add("col-lg-4", "d-flex"); // Ajuste para mostrar las cards en una fila
+          card.classList.add("mb-30"); // Agregar margen inferior a la card
+
+          const cardContainer = document.createElement("div");
+          cardContainer.classList.add("properties__card", "flex-fill");
+
+          const imagen = document.createElement("img");
+          imagen.classList.add("properties__img", "overlay1");
+          imagen.src = objeto.imagen;
+
+          const cardCaption = document.createElement("div");
+          cardCaption.classList.add("properties__caption");
+
+          const categoria = document.createElement("p");
+          categoria.textContent = objeto.categoria;
+
+          const titulo = document.createElement("h3");
+          titulo.classList.add("card-title");
+          titulo.innerHTML = `<a href="#">${objeto.nombrecurso}</a>`;
+
+          const descripcion = document.createElement("p");
+          descripcion.textContent = objeto.descripcion;
+
+          const cardFooter = document.createElement("div");
+          cardFooter.classList.add(
+            "properties__footer",
+            "d-flex",
+            "justify-content-between",
+            "align-items-center"
+          );
+
+          const rating = document.createElement("div");
+          rating.classList.add("restaurant-name");
+          rating.innerHTML = `
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half"></i>
+            </div>
+            <p><span>(4.5)</span> based on 120</p>`;
+
+          const precio = document.createElement("div");
+          precio.classList.add("price");
+          precio.innerHTML = `<span>${objeto.valor}</span>`;
+
+          const descubreMas = document.createElement("a");
+          descubreMas.href = "#";
+          descubreMas.classList.add("border-btn", "border-btn2");
+          descubreMas.textContent = "Comprar";
+
+          cardFooter.appendChild(rating);
+          cardFooter.appendChild(precio);
+
+          cardCaption.appendChild(categoria);
+          cardCaption.appendChild(titulo);
+          cardCaption.appendChild(descripcion);
+          cardCaption.appendChild(cardFooter);
+          cardCaption.appendChild(descubreMas);
+
+          cardContainer.appendChild(imagen);
+          cardContainer.appendChild(cardCaption);
+
+          card.appendChild(cardContainer);
+
+          cardDeck.appendChild(card);
+        }
+      });
+  }
+
+  // Ejecutar la función obtenerDatos al cargar la página
+  obtenerDatos();
+
+  // Ejecutar la función obtenerDatos cada 5 segundos utilizando setInterval
+  setInterval(obtenerDatos, 5000);
+</script>
+{% endblock%}

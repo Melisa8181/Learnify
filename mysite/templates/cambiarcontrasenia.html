@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cambiar Contraseña</title>
+    <style>
+      /* Estilos básicos */
+      body {
+        font-family: Arial, sans-serif;
+      }
+      form {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      label,
+      input {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="submit"] {
+        margin-top: 10px;
+      }
+      .error {
+        color: red;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cambiar Contraseña</h1>
+    <form id="cambiarContraseniaForm">
+      <label for="dni">DNI:</label>
+      <input type="text" id="dni" required />
+      <label for="contraseniaActual">Contraseña Actual:</label>
+      <input type="password" id="contraseniaActual" required />
+      <label for="nuevaContrasenia">Nueva Contraseña:</label>
+      <input type="password" id="nuevaContrasenia" required />
+      <span id="errorContrasenia" class="error"></span>
+      <input type="submit" value="Cambiar Contraseña" />
+    </form>
+
+    <script>
+      document
+        .getElementById("cambiarContraseniaForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Evitar que se envíe el formulario automáticamente
+
+          var dniInput = document.getElementById("dni").value;
+          var contraseniaActualInput =
+            document.getElementById("contraseniaActual").value;
+          var nuevaContraseniaInput =
+            document.getElementById("nuevaContrasenia").value;
+
+          var url =
+            "https://registro-43a85-default-rtdb.firebaseio.com/registro.json";
+
+          // Verificar las reglas de validación de la contraseña
+          var regexContrasenia =
+            /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
+          if (!regexContrasenia.test(nuevaContraseniaInput)) {
+            document.getElementById("errorContrasenia").innerText =
+              "La contraseña debe tener al menos 8 caracteres, incluir una mayúscula y al menos un carácter especial.";
+            return;
+          } else {
+            document.getElementById("errorContrasenia").innerText = "";
+          }
+
+          // Realizar la petición GET a la API para verificar el DNI y la contraseña actual
+          fetch(url)
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (data) {
+              // Verificar si el DNI y la contraseña actual coinciden en algún registro
+              var registroEncontrado = null;
+              for (var key in data) {
+                if (
+                  data.hasOwnProperty(key) &&
+                  data[key].dni === dniInput &&
+                  data[key].contrasenia === contraseniaActualInput
+                ) {
+                  registroEncontrado = key;
+                  break;
+                }
+              }
+
+              if (registroEncontrado) {
+                // Actualizar la contraseña del registro encontrado
+                var registroUrl =
+                  "https://registro-43a85-default-rtdb.firebaseio.com/registro/" +
+                  registroEncontrado +
+                  "/contrasenia.json";
+                fetch(registroUrl, {
+                  method: "PUT",
+                  body: JSON.stringify(nuevaContraseniaInput),
+                })
+                  .then(function (response) {
+                    alert("Contraseña actualizada correctamente.");
+                    // Restablecer el formulario
+                    document.getElementById("cambiarContraseniaForm").reset();
+                  })
+                  .catch(function (error) {
+                    alert(
+                      "Ha ocurrido un error al actualizar la contraseña. Por favor, intenta nuevamente."
+                    );
+                    console.error(error);
+                  });
+              } else {
+                alert("Los datos ingresados son incorrectos.");
+              }
+            })
+            .catch(function (error) {
+              alert("Ha ocurrido un error. Por favor, intenta nuevamente.");
+              console.error(error);
+            });
+        });
+    </script>
+  </body>
+</html>

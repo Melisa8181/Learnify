@@ -1,0 +1,630 @@
+{% extends "layout.html" %}
+<!-- declaro de donde traigo la plantilla -->
+
+{% block content %} <!--comienzo de contenido dinámico-->
+<main>
+  <!-- SLIDER -->
+  <section class="slider-area">
+    <div class="slider-active">
+      <!-- SINGLE SLIDER -->
+      <div class="single-slider slider-height d-flex align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6 col-lg-7 col-md-12">
+              <div class="hero__caption">
+                <h1 data-animation="fadeInLeft" data-delay="0.2s">
+                  Plataforma de aprendizaje<br />
+                  en línea
+                </h1>
+                <p data-animation="fadeInLeft" data-delay="0.4s">
+                  Desarrolla habilidades con cursos, certificados y títulos en
+                  linea de universidades y empresas de primer nivel.
+                </p>
+                <a
+                  href="{{ url_for('register') }}"
+                  class="btn hero-btn"
+                  data-animation="fadeInLeft"
+                  data-delay="0.7s"
+                  >Únete gratis</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ? services-area -->
+  <div class="services-area">
+    <div class="container">
+      <div class="row justify-content-sm-center">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="single-services mb-30">
+            <div class="features-icon">
+              <img src="../static/img/icon/icon1.svg" alt="" />
+            </div>
+            <div class="features-caption">
+              <h3>60+ cursos IT</h3>
+              <p>Explorá áreas como programación, diseño y datos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="single-services mb-30">
+            <div class="features-icon">
+              <img src="../static/img/icon/icon2.svg" alt="" />
+            </div>
+            <div class="features-caption">
+              <h3>Profesores expertos</h3>
+              <p>Aprendé con profesionales con experiencia real.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="single-services mb-30">
+            <div class="features-icon">
+              <img src="../static/img/icon/icon3.svg" alt="" />
+            </div>
+            <div class="features-caption">
+              <h3>Acceso de por vida</h3>
+              <p>Volvé a repasar el contenido cuando quieras.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- AREA CURSOS -->
+  <div class="courses-area section-padding40 fix">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-8">
+          <div class="section-tittle text-center mb-55">
+            <h2>Cursos con descuentos</h2>
+          </div>
+        </div>
+      </div>
+      <div class="courses-actives">
+        <!-- Single -->
+        <div class="properties pb-20">
+          <div class="properties__card">
+            <div class="properties__img overlay1">
+              <a href="#"
+                ><img src="../static/img/gallery/featured1.png" alt=""
+              /></a>
+            </div>
+            <div class="properties__caption">
+              <p>Arte</p>
+              <h3>
+                <a href="#">Fundamentos de danza</a>
+              </h3>
+              <p>
+                Descubrí los principios del movimiento escénico y corporal.
+              </p>
+              <div
+                class="properties__footer d-flex justify-content-between align-items-center"
+              >
+                <div class="restaurant-name">
+                  <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                  </div>
+                  <p><span>(4.5)</span> based on 120</p>
+                </div>
+                <div class="price">
+                  <span>$135</span>
+                </div>
+              </div>
+              <a href="#" class="border-btn border-btn2">Descubre más</a>
+            </div>
+          </div>
+        </div>
+        <!-- Single -->
+        <!-- Single -->
+        <div class="properties pb-20">
+          <div class="properties__card">
+            <div class="properties__img overlay1">
+              <a href="#"
+                ><img src="../static/img/gallery/featured2.png" alt=""
+              /></a>
+            </div>
+            <div class="properties__caption">
+              <p>Salud</p>
+              <h3>
+                <a href="#">Preparación para carrera</a>
+              </h3>
+              <p>
+                Entrená tu cuerpo y mente para lograr tus metas físicas.
+              </p>
+              <div
+                class="properties__footer d-flex justify-content-between align-items-center"
+              >
+                <div class="restaurant-name">
+                  <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                  </div>
+                  <p><span>(4.5)</span> based on 120</p>
+                </div>
+                <div class="price">
+                  <span>$105</span>
+                </div>
+              </div>
+              <a href="#" class="border-btn border-btn2">Descubre más</a>
+            </div>
+          </div>
+        </div>
+        <!-- Single -->
+        <!-- Single -->
+        <div class="properties pb-20">
+          <div class="properties__card">
+            <div class="properties__img overlay1">
+              <a href="#"
+                ><img src="../static/img/gallery/featured3.png" alt=""
+              /></a>
+            </div>
+            <div class="properties__caption">
+              <p>Programación</p>
+              <h3>
+                <a href="#">Python Avanzado</a>
+              </h3>
+              <p>
+                Dominá estructuras complejas, librerías y proyectos reales.
+              </p>
+              <div
+                class="properties__footer d-flex justify-content-between align-items-center"
+              >
+                <div class="restaurant-name">
+                  <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                  </div>
+                  <p><span>(4.5)</span> based on 120</p>
+                </div>
+                <div class="price">
+                  <span>$175</span>
+                </div>
+              </div>
+              <a href="#" class="border-btn border-btn2">Descubre más</a>
+            </div>
+          </div>
+        </div>
+        <!-- Single -->
+        <!-- Single -->
+        <div class="properties pb-20">
+          <div class="properties__card">
+            <div class="properties__img overlay1">
+              <a href="#"
+                ><img src="../static/img/gallery/featured2.png" alt=""
+              /></a>
+            </div>
+            <div class="properties__caption">
+              <p>Experiencia de Usuario</p>
+              <h3>
+                <a href="#">Fundamentos de UX</a>
+              </h3>
+              <p>
+                Aprendé a diseñar experiencias centradas en el usuario.
+              </p>
+              <div
+                class="properties__footer d-flex justify-content-between align-items-center"
+              >
+                <div class="restaurant-name">
+                  <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                  </div>
+                  <p><span>(4.5)</span> based on 120</p>
+                </div>
+                <div class="price">
+                  <span>$135</span>
+                </div>
+              </div>
+              <a href="#" class="border-btn border-btn2">Descubre más</a>
+            </div>
+          </div>
+        </div>
+        <!-- Single -->
+      </div>
+    </div>
+  </div>
+  <!-- AREA CURSOS FIN -->
+  <!--? About Area-1 Start -->
+  <section class="about-area1 fix pt-10">
+    <div class="support-wrapper align-items-center">
+      <div class="left-content1">
+        <div class="about-icon">
+          <img src="../static/img/icon/about.svg" alt="" />
+        </div>
+        <!-- section tittle -->
+        <div class="section-tittle section-tittle2 mb-55">
+          <div class="front-text">
+            <h2 class="">
+              Aprenda nuevas habilidades en línea con los mejores educadores
+            </h2>
+            <p>
+              El proceso automatizado de todas las tareas de su sitio web.
+              Descubra herramientas y técnicas para interactuar de manera eficaz
+              con niños y jóvenes.
+            </p>
+          </div>
+        </div>
+        <div class="single-features">
+          <div class="features-icon">
+            <img src="../static/img/icon/right-icon.svg" alt="" />
+          </div>
+          <div class="features-caption">
+            <p>Adquiera conocimientos actualizados en áreas como programación, diseño, marketing y más.</p>
+          </div>
+        </div>
+        <div class="single-features">
+          <div class="features-icon">
+            <img src="../static/img/icon/right-icon.svg" alt="" />
+          </div>
+          <div class="features-caption">
+            <p>
+              Aprenda a su propio ritmo con acceso 24/7 a materiales prácticos, recursos descargables y apoyo constante.
+            </p>
+          </div>
+        </div>
+
+        <div class="single-features">
+          <div class="features-icon">
+            <img src="../static/img/icon/right-icon.svg" alt="" />
+          </div>
+          <div class="features-caption">
+            <p>
+              Descubra nuevas oportunidades profesionales desarrollando habilidades demandadas por el mercado actual.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="right-content1">
+        <!-- img -->
+        <div class="right-img">
+          <img src="../static/img/gallery/about.png" alt="" />
+
+          <div class="video-icon">
+            <a
+              class="popup-video btn-icon"
+              href="https://www.youtube.com/watch?v=up68UAfH0d0"
+              ><i class="fas fa-play"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Area End -->
+  <!--? top subjects Area Start -->
+  <div class="topic-area section-padding40">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-8">
+          <div class="section-tittle text-center mb-55">
+            <h2>Explora los temas más importantes</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="single-topic text-center mb-30">
+            <div class="topic-img">
+              <img src="../static/img/gallery/topic1.png" alt="" />
+              <div class="topic-content-box">
+                <div class="topic-content">
+                  <h3><a href="#">Programación</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="single-topic text-center mb-30">
+            <div class="topic-img">
+              <img src="../static/img/gallery/topic2.png" alt="" />
+              <div class="topic-content-box">
+                <div class="topic-content">
+                  <h3><a href="#">UX & UI</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="single-topic text-center mb-30">
+            <div class="topic-img">
+              <img src="../static/img/gallery/topic3.png" alt="" />
+              <div class="topic-content-box">
+                <div class="topic-content">
+                  <h3><a href="#">Diseño Gráfico</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="single-topic text-center mb-30">
+            <div class="topic-img">
+              <img src="../static/img/gallery/topic4.png" alt="" />
+              <div class="topic-content-box">
+                <div class="topic-content">
+                  <h3><a href="#">Música</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="single-topic text-center mb-30">
+            <div class="topic-img">
+              <img src="../static/img/gallery/topic5.png" alt="" />
+              <div class="topic-content-box">
+                <div class="topic-content">
+                  <h3><a href="#">Arte</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="single-topic text-center mb-30">
+            <div class="topic-img">
+              <img src="../static/img/gallery/topic6.png" alt="" />
+              <div class="topic-content-box">
+                <div class="topic-content">
+                  <h3><a href="#">Naturales</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="single-topic text-center mb-30">
+            <div class="topic-img">
+              <img src="../static/img/gallery/topic7.png" alt="" />
+              <div class="topic-content-box">
+                <div class="topic-content">
+                  <h3><a href="#">Construcción</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="single-topic text-center mb-30">
+            <div class="topic-img">
+              <img src="../static/img/gallery/topic8.png" alt="" />
+              <div class="topic-content-box">
+                <div class="topic-content">
+                  <h3><a href="#">Salud</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-xl-12">
+          <div class="section-tittle text-center mt-20">
+            <a href="courses.html" class="border-btn">Más categorías</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- top subjects End -->
+  <!--? About Area-3 Start -->
+  <section class="about-area3 fix">
+    <div class="support-wrapper align-items-center">
+      <div class="right-content3">
+        <!-- img -->
+        <div class="right-img">
+          <img src="../static/img/gallery/about3.png" alt="" />
+        </div>
+      </div>
+      <div class="left-content3">
+        <!-- section tittle -->
+        <div class="section-tittle section-tittle2 mb-20">
+          <div class="front-text">
+            <h2 class="">
+              Resultados de los alumnos en los cursos que tomaron
+            </h2>
+          </div>
+        </div>
+        <div class="single-features">
+          <div class="features-icon">
+            <img src="../static/img/icon/right-icon.svg" alt="" />
+          </div>
+          <div class="features-caption">
+            <p>
+              Técnicas para interactuar eficazmente con niños y jóvenes
+              vulnerables.
+            </p>
+          </div>
+        </div>
+        <div class="single-features">
+          <div class="features-icon">
+            <img src="../static/img/icon/right-icon.svg" alt="" />
+          </div>
+          <div class="features-caption">
+            <p>
+              Únase a millones de personas de todo el mundo que aprenden juntas.
+            </p>
+          </div>
+        </div>
+        <div class="single-features">
+          <div class="features-icon">
+            <img src="../static/img/icon/right-icon.svg" alt="" />
+          </div>
+          <div class="features-caption">
+            <p>El aprendizaje en línea es muy fácil y natural.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Area End -->
+
+  <!-- FAQ Section Area Start -->
+  <section id="faq" class="faq-section wow fadeInUp" data-wow-delay="0.2s"">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="faq-item">
+        <button class="faq-question">¿Cómo me registro en la plataforma?</button>
+        <div class="faq-answer">
+        <p>Hacé clic en <strong>“Unirse”</strong> desde el menú superior y completá el formulario con tus datos. En segundos vas a poder acceder a todos los cursos.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">¿Cómo me inscribo en un curso?</button>
+        <div class="faq-answer">
+        <p>Entrá al curso que te interese y presioná <strong>“Unirme al curso”</strong>. Si ya tenés cuenta, se agregará automáticamente a tu panel de estudiante.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">¿Los cursos tienen certificado?</button>
+        <div class="faq-answer">
+        <p>Sí. Al finalizar el curso y aprobar las evaluaciones, obtendrás un <strong>certificado digital verificado</strong> que podés descargar o compartir en LinkedIn.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">¿Puedo acceder al curso en cualquier horario?</button>
+        <div class="faq-answer">
+        <p>¡Sí! Todos los cursos son <strong>100% online</strong> y podés avanzar a tu propio ritmo. Solo necesitás conexión a internet para acceder a las clases.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">¿Qué métodos de pago aceptan?</button>
+        <div class="faq-answer">
+        <p>Aceptamos <strong>tarjetas de crédito, débito, Mercado Pago y transferencias bancarias.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">¿Cómo contacto con soporte?</button>
+        <div class="faq-answer">
+        <p>Podés escribirnos mediante el <a href="contacts">formulario de contacto</a> o hacer clic en el <strong>botón de WhatsApp</strong> que aparece en la esquina inferior derecha.</p>
+        </div>
+    </div>
+  </section>
+    <!-- FAQ Section Area End -->
+
+
+  <!--? Team -->
+  <section class="team-area section-padding40 fix">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-8">
+          <div class="section-tittle text-center mb-55">
+            <h2>Comunidad de expertos</h2>
+          </div>
+        </div>
+      </div>
+      <div class="team-active">
+        <div class="single-cat text-center">
+          <div class="cat-icon">
+            <img src="../static/img/gallery/team1.png" alt="" />
+          </div>
+          <div class="cat-cap">
+            <h5><a href="services.html">Lic. Urela</a></h5>
+            <p>
+              Desarrolladora web full-stack con 8 años de experiencia en la
+              creación de aplicaciones web y móviles innovadoras.
+            </p>
+          </div>
+        </div>
+        <div class="single-cat text-center">
+          <div class="cat-icon">
+            <img src="../static/img/gallery/team2.png" alt="" />
+          </div>
+          <div class="cat-cap">
+            <h5><a href="services.html">Lic. Uttom</a></h5>
+            <p>
+              Experto en marketing digital con más de 10 años de experiencia
+              ayudando a marcas internacionales a mejorar su presencia en línea.
+            </p>
+          </div>
+        </div>
+        <div class="single-cat text-center">
+          <div class="cat-icon">
+            <img src="../static/img/gallery/team3.png" alt="" />
+          </div>
+          <div class="cat-cap">
+            <h5><a href="services.html">Ing. Shakil</a></h5>
+            <p>
+              Desarrollador web full-stack con 8 años de experiencia en la
+              creación de aplicaciones web y móviles innovadoras.
+            </p>
+          </div>
+        </div>
+        <div class="single-cat text-center">
+          <div class="cat-icon">
+            <img src="../static/img/gallery/team4.png" alt="" />
+          </div>
+          <div class="cat-cap">
+            <h5><a href="services.html">Ing. Arafat</a></h5>
+            <p>
+              Ingeniero de software especializado en Python con 9 años de
+              experiencia en inteligencia artificial y automatización.
+            </p>
+          </div>
+        </div>
+        <div class="single-cat text-center">
+          <div class="cat-icon">
+            <img src="../static/img/gallery/team3.png" alt="" />
+          </div>
+          <div class="cat-cap">
+            <h5><a href="services.html">Lic. Saiful</a></h5>
+            <p>
+              Científico de datos con 10 años de experiencia en inteligencia
+              artificial y machine learning, aplicando modelos para resolver
+              problemas complejos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Services End -->
+  <!--? About Area-2 Start -->
+  <section class="about-area2 fix pb-padding">
+    <div class="support-wrapper align-items-center">
+      <div class="right-content2">
+        <!-- img -->
+        <div class="right-img">
+          <img src="../static/img/gallery/about2.png" alt="" />
+        </div>
+      </div>
+      <div class="left-content2">
+        <!-- section tittle -->
+        <div class="section-tittle section-tittle2 mb-20">
+          <div class="front-text">
+            <h2 class="">¡Unete a nuestra comunidad de estudiantes!</h2>
+            <p>
+              Explorá tu pasión por la tecnología, el arte y el conocimiento en un entorno colaborativo donde cada paso cuenta. Compartí experiencias, resolvé dudas y conectá con personas que, como vos, buscan superarse día a día.
+            </p>
+            <a href="{{ url_for('register') }}" class="btn">Únete ahora gratis</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Area End -->
+</main>
+{% endblock%}

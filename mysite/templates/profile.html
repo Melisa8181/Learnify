@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - Learnify</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #7b91f4, #a977f9);
+      min-height: 100vh;
+      display: flex;
+      flex-direction:column;
+      justify-content: center;
+      align-items: center;
+      color: #2d3d8b;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      background: transparent;
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+
+    header h1 {
+      color: #ff9f67;
+      font-size: 35px;
+      margin: 0;
+    }
+
+    header .btn {
+      border-radius: 20px;
+      background-color: #ff914d;
+      border: none;
+      color: white;
+      font-weight: 600;
+      cursor: default;
+      padding: 8px 20px;
+    }
+
+    .profile-container {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 60px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 450px;
+
+      margin-top:40px;
+    }
+
+    /*.profile-header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 40px;
+      color: #ff914d;
+      text-align: left;
+    }
+
+    .profile-card img {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }*/
+    .profile-card {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-card img {
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 50%;
+      /*margin-bottom: 10px;*/
+      border: 3px solid #ff914d;
+    }
+
+    .profile-photo {
+      position: relative;
+      display: inline-block;
+    }
+
+    .profile-photo img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #ff914d;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .upload-label {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      background: #ff914d;
+      color: white;
+      padding: 6px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    .profile-name {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #2d3d8b;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+    .profile-name {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #2d3d8b;
+      margin-bottom: 10px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 12px 0;
+      justify-content: flex-start;
+      color: #2d3d8b;
+      font-size: 1rem;
+    }
+
+    .info-item i {
+      color: #ff914d;
+      font-size: 1.2rem;
+      width: 24px;
+      text-align: center;
+    }
+
+    .info-item span {
+      font-weight: 500;
+    }
+
+    .change-password {
+      display: none;
+      margin-top: 25px;
+    }
+
+    .change-password-section {
+      margin-top: 40px;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      padding-top: 25px;
+      text-align: left;
+    }
+
+    .change-password-section h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #2d3d8b;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-control {
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .btn-primary {
+      background-color: #ff914d;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #ff7a26;
+    }
+
+    .alert {
+      border-radius: 8px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+    <!-- HEADER -->
+  <header>
+    <h1>Learnify</h1>
+    <a class="btn">Perfil</a>
+  </header>
+
+  <div class="profile-container">
+    <!--<div class="profile-header">
+      <h1>Learnify</h1>
+    </div>-->
+
+    <div class="profile-card">
+      <div class="profile-photo">
+        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Foto de perfil">
+
+        <label for="fileInput" class="upload-label"><i class="fa fa-camera"></i></label>
+        <input type="file" id="fileInput" accept="image/*" style="display:none;">
+      </div>
+      <div class="profile-name"><span id="nombre"></span></div>
+    </div>
+
+    <div class="info-item">
+      <i class="fa-solid fa-hashtag"></i>
+      <div class="info-item"><strong>DNI:</strong> <span id="dni"></span></div>
+    </div>
+    <div class="info-item">
+      <i class="fa-solid fa-envelope"></i>
+      <div class="info-item"><strong>Email:</strong> <span id="email"></span></div>
+    </div>
+    <div class="info-item">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <!--<span>Curso: Front End Developer</span>--> <div class="info-item"><strong>Curso:</strong> <span id="curso"></span></div>
+    </div>
+
+    <button id="btnCambiar" class="btn btn-primary w-100 mt-3" style="color:white">Cambiar contraseña</button>
+
+      <div class="change-password" id="formCambio">
+        <hr>
+        <h5 class="mt-3">Actualizar contraseña</h5>
+
+        <form id="passwordForm">
+          <div class="mb-3">
+            <label for="actual" class="form-label">Contraseña actual</label>
+            <input type="password" id="actual" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="nueva" class="form-label">Nueva contraseña</label>
+            <input type="password" id="nueva" class="form-control" required>
+            <small class="text-muted">Debe tener al menos 8 caracteres, una mayúscula, un número y un símbolo.</small>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 mt-3" style="color:white">Guardar cambios</button>
+        </form>
+
+        <div id="mensaje" class="alert mt-3 d-none"></div>
+      </div>
+  </div>
+
+   <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+  // === Firebase URL ===
+  const FIREBASE_URL = "https://registro-43a85-default-rtdb.firebaseio.com/registro";
+
+  $(document).ready(function() {
+    // Obtener el ID del usuario desde la URL
+    const params = new URLSearchParams(window.location.search);
+    const registroId = params.get("id");
+
+    if (!registroId) {
+      alert("No se encontró el ID del usuario en la URL.");
+      return;
+    }
+
+    // Obtener los datos desde Firebase
+    $.get(`${FIREBASE_URL}/${registroId}.json`, function(data) {
+      if (!data) {
+        alert("Usuario no encontrado.");
+        return;
+      }
+
+      $("#nombre").text(data.nombreyapellido || "Usuario");
+      $("#dni").text(data.dni || "No disponible");
+      $("#email").text(data.email || data.mail || "Sin correo");
+      $("#curso").text(data.curso || "Sin curso asignado");
+    });
+
+    // === Simulación de cambio de foto ===
+    $("#fileInput").on("change", function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          $("#fotoPerfil").attr("src", e.target.result);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Mostrar/ocultar formulario de cambio de contraseña
+    $("#btnCambiar").on("click", function() {
+      $("#formCambio").stop(true, true).slideToggle(300); /*.slideToggle();*/
+    });
+
+    // Validar formato de contraseña
+    function validarContrasenia(pwd) {
+      const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+      return regex.test(pwd);
+    }
+
+    // Enviar el cambio de contraseña
+    $("#passwordForm").on("submit", function(e) {
+      e.preventDefault();
+
+      const actual = $("#actual").val();
+      const nueva = $("#nueva").val();
+
+      if (!validarContrasenia(nueva)) {
+        mostrarMensaje("La nueva contraseña no cumple los requisitos.", "danger");
+        return;
+      }
+
+      // Obtener el registro actual para validar contraseña existente
+      $.get(`${FIREBASE_URL}/${registroId}.json`, function(data) {
+        if (data && data.contrasenia === actual) {
+          // Actualizar contraseña
+          $.ajax({
+            url: `${FIREBASE_URL}/${registroId}.json`,
+            method: "PATCH",
+            data: JSON.stringify({ contrasenia: nueva }),
+            success: function() {
+              mostrarMensaje("Contraseña actualizada con éxito.", "success");
+              $("#passwordForm")[0].reset();
+            },
+            error: function() {
+              mostrarMensaje("Error al actualizar la contraseña.", "danger");
+            }
+          });
+        } else {
+          mostrarMensaje("La contraseña actual no es correcta.", "danger");
+        }
+      });
+    });
+
+    // Función para mostrar mensajes
+    function mostrarMensaje(texto, tipo) {
+      $("#mensaje").removeClass("d-none alert-success alert-danger")
+                   .addClass(`alert-${tipo}`)
+                   .text(texto)
+                   .fadeIn();
+    }
+  });
+  </script>
+
+</body>
+</html>

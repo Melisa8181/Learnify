@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Learnify | Education</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../static/img/favicon.ico"
+    />
+
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../static/css/slicknav.css" />
+    <link rel="stylesheet" href="../static/css/flaticon.css" />
+    <link rel="stylesheet" href="../static/css/progressbar_barfiller.css" />
+    <link rel="stylesheet" href="../static/css/gijgo.css" />
+    <link rel="stylesheet" href="../static/css/animate.min.css" />
+    <link rel="stylesheet" href="../static/css/animated-headline.css" />
+    <link rel="stylesheet" href="../static/css/magnific-popup.css" />
+    <link rel="stylesheet" href="../static/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="../static/css/themify-icons.css" />
+    <link rel="stylesheet" href="../static/css/slick.css" />
+    <link rel="stylesheet" href="../static/css/nice-select.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+
+    <style>
+      .login-body {
+        background-color: #fd7e14;
+      }
+      form {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      label,
+      input {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="submit"] {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="login-body">
+      <!-- Login Admin -->
+      <form id="loginForm">
+        <div class="login-form">
+          <h2>Inicia Sesión</h2>
+          <div class="form-input">
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" required />
+            <label for="contrasenia">Contraseña:</label>
+            <input type="password" id="contrasenia" required />
+            <input type="submit" value="Iniciar Sesión" />
+          </div>
+
+          <!-- Forget Password -->
+          <a href="#" class="forget">Olvidé contraseña</a>
+          <!-- Forget Password -->
+          <a href="{{ url_for('register') }}" class="registration"
+            >Registrarme</a
+          >
+        </div>
+      </form>
+      <!-- /end login form -->
+    </main>
+    <!-- JS here -->
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Evitar que se envíe el formulario automáticamente
+
+          var dniInput = document.getElementById("dni").value;
+          var contraseniaInput = document.getElementById("contrasenia").value;
+          var url =
+            "https://registro-43a85-default-rtdb.firebaseio.com/registro.json";
+
+          // Realizar la petición GET a la API para obtener los registros
+          fetch(url)
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (data) {
+              var registroEncontrado = false;
+              var registroId;
+
+              // Buscar el registro que coincida con el DNI y la contraseña ingresados
+              for (var key in data) {
+                if (
+                  data.hasOwnProperty(key) &&
+                  data[key].dni === dniInput &&
+                  data[key].contrasenia === contraseniaInput
+                ) {
+                  registroEncontrado = true;
+                  registroId = key;
+                  break;
+                }
+              }
+
+              if (registroEncontrado) {
+                // Redirigir a alumnos.html con el ID del registro como parámetro en la URL
+                window.location.href =
+                  "/alumnos?id=" + encodeURIComponent(registroId);
+              } else {
+                alert("Credenciales inválidas. Por favor, intenta nuevamente.");
+              }
+            })
+            .catch(function (error) {
+              alert("Ha ocurrido un error. Por favor, intenta nuevamente.");
+              console.error(error);
+            });
+        });
+    </script>
+    <script src="../static/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="../static/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="../static/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="../static/js/wow.min.js"></script>
+    <script src="../static/js/animated.headline.js"></script>
+    <script src="../static/js/jquery.magnific-popup.js"></script>
+
+    <!-- Date Picker -->
+    <script src="../static/js/gijgo.min.js"></script>
+    <!-- Nice-select, sticky -->
+    <script src="../static/js/jquery.nice-select.min.js"></script>
+    <script src="../static/js/jquery.sticky.js"></script>
+    <!-- Progress -->
+    <script src="../static/js/jquery.barfiller.js"></script>
+
+    <!-- counter , waypoint,Hover Direction -->
+    <script src="../static/js/jquery.counterup.min.js"></script>
+    <script src="../static/js/waypoints.min.js"></script>
+    <script src="../static/js/jquery.countdown.min.js"></script>
+    <script src="../static/js/hover-direction-snake.min.js"></script>
+
+    <!-- contact js -->
+    <script src="../static/js/contact.js"></script>
+    <script src="../static/js/jquery.form.js"></script>
+    <script src="../static/js/jquery.validate.min.js"></script>
+    <script src="../static/js/mail-script.js"></script>
+    <script src="../static/js/jquery.ajaxchimp.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="../static/js/plugins.js"></script>
+    <script src="../static/js/main.js"></script>
+  </body>
+</html>

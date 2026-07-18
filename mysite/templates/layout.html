@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Learnify | Education</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../static/img/favicon.ico"
+    />
+    <!-- Font Awesome
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />-->
+
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../static/css/slicknav.css" />
+    <link rel="stylesheet" href="../static/css/flaticon.css" />
+    <link rel="stylesheet" href="../static/css/progressbar_barfiller.css" />
+    <link rel="stylesheet" href="../static/css/gijgo.css" />
+    <link rel="stylesheet" href="../static/css/animate.min.css" />
+    <link rel="stylesheet" href="../static/css/animated-headline.css" />
+    <link rel="stylesheet" href="../static/css/magnific-popup.css" />
+    <link rel="stylesheet" href="../static/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="../static/css/themify-icons.css" />
+    <link rel="stylesheet" href="../static/css/slick.css" />
+    <link rel="stylesheet" href="../static/css/nice-select.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+  <body>
+    <!-- ESPERA -->
+    <!--<div id="preloader-active">
+      <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+          <div class="preloader-circle"></div>
+          <div class="preloader-img pere-text">
+            <img src="../static/img/logo/loder.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>-->
+    <!-- ESPERA FIN -->
+    <header>
+      <!-- HEADER -->
+      <div class="header-area header-transparent">
+        <div class="main-header">
+          <div class="header-bottom header-sticky">
+            <div class="container-fluid">
+              <div class="row align-items-center">
+                <!-- LOGO -->
+                <div class="col-xl-2 col-lg-2">
+                  <div class="logo">
+                    <!--<a href="index.html"
+                      ><img src="../static/img/logo/logo.png" alt="" /></a
+                    >--><a href="{{ url_for('home') }}">
+                      <!--<img
+                        src="../static/img/logo/loder.png"
+                        style="
+                          background-color: #fff;
+                          padding: 5px;
+                        "
+                        alt=""
+                      />-->
+                      <h1 style="color: #ff9f67; font-size: 35px">
+                        Learnify
+                      </h1></a
+                    >
+                  </div>
+                </div>
+                <div class="col-xl-10 col-lg-10">
+                  <div
+                    class="menu-wrapper d-flex align-items-center justify-content-end"
+                  >
+                    <!-- MENU -->
+                    <div class="main-menu d-none d-lg-block">
+                      <nav>
+                        <ul id="navigation">
+                          <li class="active">
+                            <a href="{{ url_for('home') }}">Home</a> <!--Funciones de redirección-->
+                          </li>
+                          <li><a href="{{ url_for('courses') }}">Cursos</a></li>
+                          <li>
+                            <a href="{{ url_for('about') }}">Sobre Nosotros</a>
+                          </li>
+                          <!--<li>
+                            <a href="#">Blog</a>
+                            <ul class="submenu">
+                              <li><a href="blog.html">Blog</a></li>
+                              <li>
+                                <a href="blog_details.html">Detalles</a>
+                              </li>
+                              <li><a href="elements.html">Elemento</a></li>
+                            </ul>
+                          </li>-->
+                          <li>
+                            <a href="{{ url_for('contacts') }}">Contacto</a>
+                          </li>
+                          <!-- BOTON -->
+                          <li class="button-header margin-left">
+                            <a href="{{ url_for('register') }}" class="btn"
+                              >Unirse</a
+                            >
+                          </li>
+                          <li class="button-header">
+                            <a href="{{ url_for('validar') }}" class="btn btn3"
+                              >Iniciar Sesión</a
+                            >
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+                <!-- MOBILE MENU -->
+                <div class="col-12">
+                  <div class="mobile_menu d-block d-lg-none"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FIN HEADER -->
+      <a href="https://wa.me/5491122334455?text=¡Hola%20Learnify!%20Me%20gustaria%20recibir%20asesoramiento%20sobre%20qué%20curso%20elegir." target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <!--<span>Chateá con nosotros</span>-->
+      </a>
+    </header>
+    <main>{% block content %} {% endblock%}</main> <!--Defino el contenido dinámico de cada página-->
+    <footer>
+      <div class="footer-wrappper footer-bg">
+        <!-- Footer Start-->
+        <div class="footer-area footer-padding">
+          <div class="container">
+            <div class="row justify-content-between">
+              <div class="col-xl-4 col-lg-5 col-md-4 col-sm-6">
+                <div class="single-footer-caption mb-50">
+                  <div class="single-footer-caption mb-30">
+                    <!-- logo -->
+                    <div class="footer-logo mb-25">
+                      <!--<a href="index.html"
+                        ><img
+                          src="../static/img/logo/logo2_footer.png"
+                          alt="" /></a
+                      >--><a href="{{ url_for('home') }}">
+                        <!--<img
+                          src="../static/img/logo/loder.png"
+                          style="background-color: #fff; padding: 5px"
+                          alt=""
+                        />-->
+                        <h1 style="color: #ff9f67; font-size: 35px">
+                          Learnify
+                        </h1></a
+                      >
+                    </div>
+                    <div class="footer-tittle">
+                      <div class="footer-pera">
+                        <p>Aprende, crece, triunfa.</p>
+                      </div>
+                    </div>
+                    <!-- social -->
+                    <div class="footer-social">
+                      <a href="youtube.com"><i class="fab fa-youtube"></i></a>
+                      <a href="facebook.com"
+                        ><i class="fab fa-facebook-f"></i
+                      ></a>
+                      <a href="instagram.com"
+                        ><i class="fab fa-instagram"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5">
+                <div class="single-footer-caption mb-50">
+                  <div class="footer-tittle">
+                    <h4>Learnify</h4>
+                    <ul>
+                      <li><a href="#">Acerca de</a></li>
+                      <li><a href="#">Qué ofrecemos</a></li>
+                      <li><a href="#">Carreras profesionales</a></li>
+                      <li><a href="#">Catálogo</a></li>
+                      <li><a href="#">Certificados, títulos</a></li>
+                      <li><a href="#">Para Empresas</a></li>
+                      <li><a href="#">Para gobiernos</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+                <div class="single-footer-caption mb-50">
+                  <div class="footer-tittle">
+                    <h4>Comunidad</h4>
+                    <ul>
+                      <li><a href="#">Estudiantes</a></li>
+                      <li><a href="#">Socios</a></li>
+                      <li><a href="#">Probadores beta</a></li>
+                      <li><a href="#">Blog</a></li>
+                      <li><a href="#">Centro de enseñanza</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                <div class="single-footer-caption mb-50">
+                  <div class="footer-tittle">
+                    <h4>Más</h4>
+                    <ul>
+                      <li><a href="#">Términos</a></li>
+                      <li><a href="#">Privacidad</a></li>
+                      <li><a href="#">Ayuda</a></li>
+                      <li><a href="#">Accesibilidad</a></li>
+                      <li>
+                        <a href="{{ url_for('contacts') }}">Contacto</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- footer-bottom area -->
+        <div class="footer-bottom-area">
+          <div class="container">
+            <div class="footer-border">
+              <div class="row d-flex align-items-center">
+                <div class="col-xl-12">
+                  <div class="footer-copy-right text-center">
+                    <p>
+                      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                      Copyright &copy;
+                      <script>
+                        document.write(new Date().getFullYear());
+                      </script>
+                      Todos | This template is made with
+                      <i class="fa fa-heart" aria-hidden="true"></i> by
+                      <a href="https://colorlib.com" target="_blank"
+                        >Colorlib</a
+                      >
+                      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer End-->
+      </div>
+    </footer>
+    <!-- Scroll Up -->
+    <div id="back-top">
+      <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+    <!-- JS here -->
+    <script src="../static/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="../static/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="../static/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="../static/js/wow.min.js"></script>
+    <script src="../static/js/animated.headline.js"></script>
+    <script src="../static/js/jquery.magnific-popup.js"></script>
+
+    <!-- Date Picker -->
+    <script src="../static/js/gijgo.min.js"></script>
+    <!-- Nice-select, sticky -->
+    <script src="../static/js/jquery.nice-select.min.js"></script>
+    <script src="../static/js/jquery.sticky.js"></script>
+    <!-- Progress -->
+    <script src="../static/js/jquery.barfiller.js"></script>
+
+    <!-- counter , waypoint,Hover Direction -->
+    <script src="../static/js/jquery.counterup.min.js"></script>
+    <script src="../static/js/waypoints.min.js"></script>
+    <script src="../static/js/jquery.countdown.min.js"></script>
+    <script src="../static/js/hover-direction-snake.min.js"></script>
+
+    <!-- contact js -->
+    <!-- <script src="../static/js/contact.js"></script>-->
+    <script src="../static/js/jquery.form.js"></script>
+    <script src="../static/js/jquery.validate.min.js"></script>
+    <script src="../static/js/mail-script.js"></script>
+    <script src="../static/js/jquery.ajaxchimp.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="../static/js/plugins.js"></script>
+    <script src="../static/js/main.js"></script>
+  </body>
+</html>

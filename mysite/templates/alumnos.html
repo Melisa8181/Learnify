@@ -1,0 +1,81 @@
+{% extends "layout_alumnos.html" %}
+<!-- declaro de donde traigo la plantilla -->
+
+{% block content %}
+
+<main  style="padding-top: 150px; z-index: 1;">
+  <h1 id="bienvenido"></h1>
+  <!--<button id="perfilButton" style="">Ver perfil</button>-->
+  <div id="cursoContainer"></dv>
+</main>
+
+<script>
+  var urlParams = new URLSearchParams(window.location.search);
+  var registroId = urlParams.get("id");
+
+  // Obtener los datos del registro desde la API
+  var registroUrl =
+    "https://registro-43a85-default-rtdb.firebaseio.com/registro/" +
+    registroId +
+    ".json";
+  fetch(registroUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      // Obtener el nombre y apellido del registro
+      var nombreApellido = data.nombreyapellido;
+
+      // Mostrar el mensaje de bienvenida
+      document.getElementById("bienvenido").textContent =
+        "Bienvenido " + nombreApellido;
+
+      // Obtener el curso del registro
+      var curso = data.curso;
+
+      // Obtener los datos del curso desde la API
+      var cursosUrl =
+        "https://cursos-1e632-default-rtdb.firebaseio.com/cursos.json";
+      fetch(cursosUrl)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (cursosData) {
+          // Buscar el curso que coincida con el nombre del curso del registro
+          for (var key in cursosData) {
+            if (
+              cursosData.hasOwnProperty(key) &&
+              cursosData[key].nombrecurso === curso
+            ) {
+              var cursoEncontrado = cursosData[key];
+              // Mostrar los datos del curso
+              mostrarDatosCurso(cursoEncontrado);
+              break;
+            }
+          }
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+
+  function mostrarDatosCurso(curso) {
+    var cursoContainer = document.getElementById("cursoContainer");
+    cursoContainer.innerHTML = `
+              <h2>${curso.nombrecurso}</h2>
+              <img src="${curso.imagen}" alt="${curso.nombrecurso}" style="max-width: 500px; height: auto;">
+              <p><strong>Valor:</strong> ${curso.valor}</p>
+              <p><strong>Duración:</strong> ${curso.duracion}</p>
+              <p><strong>Requisitos:</strong> ${curso.requisitos}</p>
+              <p><strong>Objetivo Específico:</strong> ${curso.objetivoespecifico}</p>
+              <p><strong>Objetivo General:</strong> ${curso.objetivogeneral}</p>
+          `;
+          
+  }
+
+</script>
+
+{% endblock%}
