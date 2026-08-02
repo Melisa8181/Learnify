@@ -7,21 +7,24 @@ Learnify es una plataforma web educativa diseñada para facilitar el registro de
 ## 🛠️ Tecnologías Utilizadas
 
 ### **Backend & Servidor**
-*   **Python 3.x**: Lenguaje de programación principal.
-*   **Flask**: Micro-framework para el enrutamiento y renderizado del lado del servidor.
-*   **Jinja2**: Motor de plantillas dinámicas para la composición de vistas HTML.
+
+- **Python 3.x**: Lenguaje de programación principal.
+- **Flask**: Micro-framework para el enrutamiento y renderizado del lado del servidor.
+- **Jinja2**: Motor de plantillas dinámicas para la composición de vistas HTML.
 
 ### **Base de Datos & Almacenamiento**
-*   **Firebase Realtime Database (NoSQL)**: Almacenamiento en la nube en formato JSON para el registro de usuarios y consulta del catálogo de cursos.
+
+- **Firebase Realtime Database (NoSQL)**: Almacenamiento en la nube en formato JSON para el registro de usuarios y consulta del catálogo de cursos.
 
 ### **Frontend & UI/UX**
-*   **HTML5 / CSS3 / JavaScript (ES6)**: Lenguajes core del frontend.
-*   **Bootstrap 5**: Framework de estilos responsivo y moderno.
-*   **jQuery**: Biblioteca de JavaScript para la manipulación del DOM y peticiones asíncronas (AJAX).
-*   **Plugins & Animaciones**: 
-    *   *Owl Carousel & Slick*: Deslizadores de imágenes interactivos.
-    *   *Slicknav & Nice Select*: Interfaces pulidas de navegación y menús de selección.
-    *   *FontAwesome & Flaticons*: Iconografía profesional.
+
+- **HTML5 / CSS3 / JavaScript (ES6)**: Lenguajes core del frontend.
+- **Bootstrap 5**: Framework de estilos responsivo y moderno.
+- **jQuery**: Biblioteca de JavaScript para la manipulación del DOM y peticiones asíncronas (AJAX).
+- **Plugins & Animaciones**:
+  - _Owl Carousel & Slick_: Deslizadores de imágenes interactivos.
+  - _Slicknav & Nice Select_: Interfaces pulidas de navegación y menús de selección.
+  - _FontAwesome & Flaticons_: Iconografía profesional.
 
 ---
 
@@ -67,41 +70,49 @@ Learnify/
 Sigue estos pasos para poner en marcha el proyecto en tu máquina local:
 
 ### **Requisitos Previos**
+
 Asegúrate de tener instalado Python 3.x en tu sistema.
 
 ### **Paso 1: Clonar el Repositorio**
+
 ```bash
 git clone https://github.com/tu-usuario/Learnify.git
 cd Learnify
 ```
 
 ### **Paso 2: Crear y Activar un Entorno Virtual**
+
 Es una buena práctica para mantener las dependencias aisladas:
 
-*   **En Windows:**
-    ```bash
-    python -m venv venv
-    .\venv\Scripts\activate
-    ```
-*   **En macOS/Linux:**
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
+- **En Windows:**
+  ```bash
+  python -m venv venv
+  .\venv\Scripts\activate
+  ```
+- **En macOS/Linux:**
+  ```bash
+  python3 -m venv venv
+  source venv/bin/activate
+  ```
 
 ### **Paso 3: Instalar Dependencias**
+
 Instala Flask y las librerías necesarias:
+
 ```bash
 pip install Flask
 ```
 
-*(Opcional) Si existe un archivo `requirements.txt`:*
+_(Opcional) Si existe un archivo `requirements.txt`:_
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### **Paso 4: Ejecutar el Servidor de Desarrollo**
+
 Corre la aplicación de la siguiente manera:
+
 ```bash
 python index.py
 ```
@@ -110,11 +121,27 @@ La aplicación estará disponible y escuchando peticiones en: `http://127.0.0.1:
 
 ---
 
-## 🔒 Buenas Prácticas de Seguridad y Escalabilidad (Hoja de Ruta)
+## 🚧 Roadmap Técnico (Mejoras a Producción)
 
-Este proyecto fue desarrollado inicialmente como un prototipo funcional/MVP. Para llevarlo a un nivel de producción profesional, se recomiendan las siguientes mejoras:
+Este proyecto fue desarrollado como un MVP funcional. A continuación se detallan mejoras planificadas para llevarlo a un entorno productivo, enfocadas en seguridad, escalabilidad y buenas prácticas de arquitectura:
 
-1.  **Migrar la Lógica de Autenticación al Backend**: Actualmente, la verificación de credenciales y filtrado de usuarios se realiza en el cliente (JavaScript), lo cual expone la base de datos completa. Debe realizarse en `index.py` utilizando librerías como `Flask-Login` o tokens JWT.
-2.  **Cifrado de Contraseñas**: Las claves de usuario deben ser encriptadas antes de guardarse en cualquier base de datos, utilizando algoritmos como `bcrypt` o `Argon2`. Nunca deben guardarse ni transmitirse en texto plano.
-3.  **Proteger las URLs de la Base de Datos**: Mover las peticiones de Firebase al backend en Python de manera que los endpoints de base de datos se manejen mediante variables de entorno protegidas (`.env`) y no queden expuestas en el código del navegador.
-4.  **Uso de Sesiones Seguras**: Controlar el acceso a `/alumnos` a través de sesiones de servidor (`flask.session`) en lugar de depender únicamente del parámetro `?id=` en la barra de direcciones de la URL, evitando la vulnerabilidad de secuestro de identificador.
+### 🔐 Seguridad
+
+- Migrar la autenticación al backend utilizando Flask (por ejemplo con Flask-Login o JWT), evitando exponer la base de datos en el cliente.
+- Implementar hashing seguro de contraseñas (bcrypt / Argon2).
+- Gestionar credenciales y endpoints sensibles mediante variables de entorno (`.env`).
+
+### 🧱 Arquitectura
+
+- Centralizar la lógica de acceso a datos en el backend, desacoplando frontend y base de datos.
+- Definir endpoints específicos para consultas en lugar de exponer nodos completos de Firebase.
+
+### 🔑 Manejo de sesiones
+
+- Implementar sesiones seguras del lado del servidor (`flask.session`) para controlar autenticación y autorización.
+- Evitar el uso de parámetros en URL (`?id=`) como mecanismo de identificación.
+
+### 📈 Escalabilidad
+
+- Optimizar consultas a base de datos para evitar cargas completas en memoria del cliente.
+- Evaluar migración a una arquitectura más robusta (API REST dedicada).
