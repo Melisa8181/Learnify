@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,14 +16,14 @@
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="../static/img/favicon.ico"
+      href="/static/img/favicon.ico"
     />
     <!-- Font Awesome
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
       rel="stylesheet"
     />-->
-    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
@@ -94,7 +94,7 @@
         <div class="preloader-inner position-relative">
           <div class="preloader-circle"></div>
           <div class="preloader-img pere-text">
-            <img src="../static/img/logo/loder.png" alt="" />
+            <img src="/static/img/logo/loder.png" alt="" />
           </div>
         </div>
       </div>
@@ -102,10 +102,7 @@
     <!-- ESPERA FIN -->
     <header>
       <!-- HEADER -->
-      <div
-        class="header-area header-transparent"
-        style="z-index: 10"
-      >
+      <div class="header-area header-transparent" style="z-index: 10">
         <div class="main-header">
           <div class="header-bottom header-sticky">
             <div class="container-fluid">
@@ -114,10 +111,10 @@
                 <div class="col-xl-2 col-lg-2">
                   <div class="logo">
                     <!--<a href="index.html"
-                      ><img src="../static/img/logo/logo.png" alt="" /></a
+                      ><img src="/static/img/logo/logo.png" alt="" /></a
                     >--><a href="{{ url_for('home') }}">
                       <!--<img
-                        src="../static/img/logo/loder.png"
+                        src="/static/img/logo/loder.png"
                         style="
                           background-color: #fff;
                           padding: 5px;
@@ -167,7 +164,11 @@
           </div>
         </div>
       </div>
-      <a href="https://wa.me/5491122334455?text=¡Hola%20Learnify!%20Me%20gustaria%20recibir%20asesoramiento%20sobre%20qué%20curso%20elegir." target="_blank" class="whatsapp-float">
+      <a
+        href="https://wa.me/5491122334455?text=¡Hola%20Learnify!%20Me%20gustaria%20recibir%20asesoramiento%20sobre%20qué%20curso%20elegir."
+        target="_blank"
+        class="whatsapp-float"
+      >
         <i class="fab fa-whatsapp"></i>
         <!--<span>Chateá con nosotros</span>-->
       </a>
@@ -206,11 +207,11 @@
                     <div class="footer-logo mb-25">
                       <!--<a href="index.html"
                         ><img
-                          src="../static/img/logo/logo2_footer.png"
+                          src="/static/img/logo/logo2_footer.png"
                           alt="" /></a
                       >--><a href="{{ url_for('home') }}">
                         <!--<img
-                          src="../static/img/logo/loder.png"
+                          src="/static/img/logo/loder.png"
                           style="background-color: #fff; padding: 5px"
                           alt=""
                         />-->

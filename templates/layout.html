@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,7 +16,7 @@
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="../static/img/favicon.ico"
+      href="/static/img/favicon.ico"
     />
     <!-- Font Awesome
     <link
@@ -24,20 +24,20 @@
       rel="stylesheet"
     />-->
 
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../static/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="../static/css/slicknav.css" />
-    <link rel="stylesheet" href="../static/css/flaticon.css" />
-    <link rel="stylesheet" href="../static/css/progressbar_barfiller.css" />
-    <link rel="stylesheet" href="../static/css/gijgo.css" />
-    <link rel="stylesheet" href="../static/css/animate.min.css" />
-    <link rel="stylesheet" href="../static/css/animated-headline.css" />
-    <link rel="stylesheet" href="../static/css/magnific-popup.css" />
-    <link rel="stylesheet" href="../static/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="../static/css/themify-icons.css" />
-    <link rel="stylesheet" href="../static/css/slick.css" />
-    <link rel="stylesheet" href="../static/css/nice-select.css" />
-    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/static/css/slicknav.css" />
+    <link rel="stylesheet" href="/static/css/flaticon.css" />
+    <link rel="stylesheet" href="/static/css/progressbar_barfiller.css" />
+    <link rel="stylesheet" href="/static/css/gijgo.css" />
+    <link rel="stylesheet" href="/static/css/animate.min.css" />
+    <link rel="stylesheet" href="/static/css/animated-headline.css" />
+    <link rel="stylesheet" href="/static/css/magnific-popup.css" />
+    <link rel="stylesheet" href="/static/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="/static/css/themify-icons.css" />
+    <link rel="stylesheet" href="/static/css/slick.css" />
+    <link rel="stylesheet" href="/static/css/nice-select.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
   </head>
   <body>
     <!-- ESPERA -->
@@ -46,7 +46,7 @@
         <div class="preloader-inner position-relative">
           <div class="preloader-circle"></div>
           <div class="preloader-img pere-text">
-            <img src="../static/img/logo/loder.png" alt="" />
+            <img src="/static/img/logo/loder.png" alt="" />
           </div>
         </div>
       </div>
@@ -63,10 +63,10 @@
                 <div class="col-xl-2 col-lg-2">
                   <div class="logo">
                     <!--<a href="index.html"
-                      ><img src="../static/img/logo/logo.png" alt="" /></a
+                      ><img src="/static/img/logo/logo.png" alt="" /></a
                     >--><a href="{{ url_for('home') }}">
                       <!--<img
-                        src="../static/img/logo/loder.png"
+                        src="/static/img/logo/loder.png"
                         style="
                           background-color: #fff;
                           padding: 5px;
@@ -88,7 +88,8 @@
                       <nav>
                         <ul id="navigation">
                           <li class="active">
-                            <a href="{{ url_for('home') }}">Home</a> <!--Funciones de redirección-->
+                            <a href="{{ url_for('home') }}">Home</a>
+                            <!--Funciones de redirección-->
                           </li>
                           <li><a href="{{ url_for('courses') }}">Cursos</a></li>
                           <li>
@@ -133,12 +134,17 @@
         </div>
       </div>
       <!-- FIN HEADER -->
-      <a href="https://wa.me/5491122334455?text=¡Hola%20Learnify!%20Me%20gustaria%20recibir%20asesoramiento%20sobre%20qué%20curso%20elegir." target="_blank" class="whatsapp-float">
+      <a
+        href="https://wa.me/5491122334455?text=¡Hola%20Learnify!%20Me%20gustaria%20recibir%20asesoramiento%20sobre%20qué%20curso%20elegir."
+        target="_blank"
+        class="whatsapp-float"
+      >
         <i class="fab fa-whatsapp"></i>
         <!--<span>Chateá con nosotros</span>-->
       </a>
     </header>
-    <main>{% block content %} {% endblock%}</main> <!--Defino el contenido dinámico de cada página-->
+    <main>{% block content %} {% endblock%}</main>
+    <!--Defino el contenido dinámico de cada página-->
     <footer>
       <div class="footer-wrappper footer-bg">
         <!-- Footer Start-->
@@ -152,11 +158,11 @@
                     <div class="footer-logo mb-25">
                       <!--<a href="index.html"
                         ><img
-                          src="../static/img/logo/logo2_footer.png"
+                          src="/static/img/logo/logo2_footer.png"
                           alt="" /></a
                       >--><a href="{{ url_for('home') }}">
                         <!--<img
-                          src="../static/img/logo/loder.png"
+                          src="/static/img/logo/loder.png"
                           style="background-color: #fff; padding: 5px"
                           alt=""
                         />-->
@@ -267,45 +273,45 @@
     </div>
 
     <!-- JS here -->
-    <script src="../static/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="/static/js/vendor/modernizr-3.5.0.min.js"></script>
     <!-- Jquery, Popper, Bootstrap -->
-    <script src="../static/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="../static/js/popper.min.js"></script>
-    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="/static/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
     <!-- Jquery Mobile Menu -->
-    <script src="../static/js/jquery.slicknav.min.js"></script>
+    <script src="/static/js/jquery.slicknav.min.js"></script>
 
     <!-- Jquery Slick , Owl-Carousel Plugins -->
-    <script src="../static/js/owl.carousel.min.js"></script>
-    <script src="../static/js/slick.min.js"></script>
+    <script src="/static/js/owl.carousel.min.js"></script>
+    <script src="/static/js/slick.min.js"></script>
     <!-- One Page, Animated-HeadLin -->
-    <script src="../static/js/wow.min.js"></script>
-    <script src="../static/js/animated.headline.js"></script>
-    <script src="../static/js/jquery.magnific-popup.js"></script>
+    <script src="/static/js/wow.min.js"></script>
+    <script src="/static/js/animated.headline.js"></script>
+    <script src="/static/js/jquery.magnific-popup.js"></script>
 
     <!-- Date Picker -->
-    <script src="../static/js/gijgo.min.js"></script>
+    <script src="/static/js/gijgo.min.js"></script>
     <!-- Nice-select, sticky -->
-    <script src="../static/js/jquery.nice-select.min.js"></script>
-    <script src="../static/js/jquery.sticky.js"></script>
+    <script src="/static/js/jquery.nice-select.min.js"></script>
+    <script src="/static/js/jquery.sticky.js"></script>
     <!-- Progress -->
-    <script src="../static/js/jquery.barfiller.js"></script>
+    <script src="/static/js/jquery.barfiller.js"></script>
 
     <!-- counter , waypoint,Hover Direction -->
-    <script src="../static/js/jquery.counterup.min.js"></script>
-    <script src="../static/js/waypoints.min.js"></script>
-    <script src="../static/js/jquery.countdown.min.js"></script>
-    <script src="../static/js/hover-direction-snake.min.js"></script>
+    <script src="/static/js/jquery.counterup.min.js"></script>
+    <script src="/static/js/waypoints.min.js"></script>
+    <script src="/static/js/jquery.countdown.min.js"></script>
+    <script src="/static/js/hover-direction-snake.min.js"></script>
 
     <!-- contact js -->
-    <!-- <script src="../static/js/contact.js"></script>-->
-    <script src="../static/js/jquery.form.js"></script>
-    <script src="../static/js/jquery.validate.min.js"></script>
-    <script src="../static/js/mail-script.js"></script>
-    <script src="../static/js/jquery.ajaxchimp.min.js"></script>
+    <!-- <script src="/static/js/contact.js"></script>-->
+    <script src="/static/js/jquery.form.js"></script>
+    <script src="/static/js/jquery.validate.min.js"></script>
+    <script src="/static/js/mail-script.js"></script>
+    <script src="/static/js/jquery.ajaxchimp.min.js"></script>
 
     <!-- Jquery Plugins, main Jquery -->
-    <script src="../static/js/plugins.js"></script>
-    <script src="../static/js/main.js"></script>
+    <script src="/static/js/plugins.js"></script>
+    <script src="/static/js/main.js"></script>
   </body>
 </html>
